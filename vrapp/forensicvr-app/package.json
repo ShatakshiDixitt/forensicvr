@@ -1,0 +1,40 @@
+{
+  "name": "forensicvr-app",
+  "version": "1.0.0",
+  "main": "electron.cjs",
+  "scripts": {
+    "dev": "concurrently \"vite\" \"wait-on http://localhost:5173 && cross-env NODE_ENV=development electron .\"",
+    "build": "vite build",
+    "electron:build": "npm run build && electron-builder",
+    "preview": "vite preview"
+  },
+  "build": {
+    "appId": "com.forensicvr.app",
+    "productName": "ForensicVR",
+    "files": [
+      "dist/**/*",
+      "electron.cjs",
+      "preload.cjs"
+    ],
+    "mac": {
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.4",
+    "@vitejs/plugin-react-swc": "^4.2.3",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
+    "electron": "^40.6.1",
+    "vite": "^7.3.1",
+    "wait-on": "^9.0.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "ws": "^8.19.0"
+  }
+}
