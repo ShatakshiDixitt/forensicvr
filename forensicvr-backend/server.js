@@ -48,5 +48,5 @@ app.delete('/api/objects/:id', (req, res) => {
 })
 
 app.listen(3001, '0.0.0.0', () => {
-  console.log('ForensicVR backend running on port 3001')
+  console.log('CrimeLens backend running on port 3001')
 })

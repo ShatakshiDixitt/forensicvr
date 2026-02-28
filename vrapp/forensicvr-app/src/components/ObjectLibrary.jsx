@@ -5,7 +5,7 @@ export default function ObjectLibrary() {
   const { objects, loading, deleteObject, sendObjectToVR } = useLibrary()
 
   if (loading) return (
-    <div style={{ fontFamily: 'DM Mono, monospace', color: '#2a2a3a', fontSize: '12px', letterSpacing: '2px' }}>
+    <div style={{ fontFamily: 'DM Mono, monospace', color: '#888888', fontSize: '12px', letterSpacing: '2px' }}>
       LOADING EVIDENCE DATABASE...
     </div>
   )
@@ -16,19 +16,19 @@ export default function ObjectLibrary() {
         @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap');
       `}</style>
       <div style={{
-        textAlign: 'center', marginTop: '80px', color: '#1e1e2e',
+        textAlign: 'center', marginTop: '80px', color: '#888888',
         fontFamily: 'Syne, sans-serif'
       }}>
         <div style={{
-          width: '64px', height: '64px', border: '1px solid #1e1e2e',
+          width: '64px', height: '64px', border: '1px solid #888888',
           borderRadius: '50%', margin: '0 auto 24px',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
-          fontSize: '24px', color: '#2a2a3a'
+          fontSize: '24px', color: '#888888'
         }}>◈</div>
-        <p style={{ fontSize: '14px', fontWeight: '600', color: '#2a2a3a', marginBottom: '8px' }}>
+        <p style={{ fontSize: '14px', fontWeight: '600', color: '#888888', marginBottom: '8px' }}>
           NO EVIDENCE CATALOGUED
         </p>
-        <p style={{ fontSize: '12px', fontFamily: 'DM Mono, monospace', color: '#1a1a2a', letterSpacing: '1px' }}>
+        <p style={{ fontSize: '12px', fontFamily: 'DM Mono, monospace', color: '#888888', letterSpacing: '1px' }}>
           Use the Scanner to add your first object
         </p>
       </div>
@@ -49,7 +49,7 @@ export default function ObjectLibrary() {
           font-family: 'Syne', sans-serif;
           font-size: 28px;
           font-weight: 800;
-          color: #fff;
+          color: #888888;
           letter-spacing: -0.5px;
         }
         .lib-count {
@@ -114,7 +114,7 @@ export default function ObjectLibrary() {
         }
         .card-desc {
           font-family: 'DM Mono', monospace;
-          color: #2a2a3a;
+          color: #888;
           font-size: 11px;
           line-height: 1.6;
           margin-bottom: 16px;
@@ -122,11 +122,17 @@ export default function ObjectLibrary() {
           -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
           overflow: hidden;
-        }
+          transition: all 0.3s ease;
+      }
+        .obj-card:hover .card-desc {
+          display: block;
+          -webkit-line-clamp: unset;
+          overflow: visible;
+      }
         .card-dims {
           font-family: 'DM Mono', monospace;
           font-size: 10px;
-          color: #1e1e2e;
+          color: #888888;
           margin-bottom: 16px;
           letter-spacing: 0.5px;
         }
@@ -150,8 +156,8 @@ export default function ObjectLibrary() {
         .btn-delete {
           padding: 9px 13px;
           background: transparent;
-          color: #2a2a3a;
-          border: 1px solid #1a1a2a;
+          color: #888888;
+          border: 1px solid #888888;
           border-radius: 6px;
           cursor: pointer;
           font-family: 'DM Mono', monospace;

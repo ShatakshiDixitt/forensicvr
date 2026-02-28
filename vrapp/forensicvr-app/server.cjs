@@ -33,5 +33,5 @@ app.delete('/api/objects/:id', (req, res) => {
 
 const PORT = 3001
 app.listen(PORT, () => {
-  console.log(`ForensicVR backend running on http://localhost:${PORT}`)
+  console.log(`CrimeLens backend running on http://localhost:${PORT}`)
 })

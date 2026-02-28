@@ -10,7 +10,7 @@
   },
   "build": {
     "appId": "com.forensicvr.app",
-    "productName": "ForensicVR",
+    "productName": "CrimeLens",
     "files": [
       "dist/**/*",
       "electron.cjs",

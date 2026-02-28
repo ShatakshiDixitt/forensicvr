@@ -202,7 +202,7 @@ export default function Login() {
         .stat-l {
           font-family: 'DM Mono', monospace;
           font-size: 8px;
-          color: #2a2a3a;
+          color: #888888;
           letter-spacing: 2px;
           text-transform: uppercase;
           margin-top: 3px;
@@ -256,7 +256,7 @@ export default function Login() {
         .right-sub {
           font-family: 'DM Mono', monospace;
           font-size: 11px;
-          color: #2a2a3a;
+          color: #888888;
           line-height: 1.8;
           margin-bottom: 40px;
           max-width: 380px;
@@ -371,7 +371,7 @@ export default function Login() {
         .feat-desc {
           font-family: 'DM Mono', monospace;
           font-size: 9px;
-          color: #222;
+          color: #888888;
           letter-spacing: 0.5px;
         }
 
@@ -442,13 +442,13 @@ export default function Login() {
         <div className="corner-br" />
 
         <div className="eyebrow fade-in" style={{ animationDelay: '0.1s' }}>
-          ForensicVR / System v1.0
+          CrimeLens / System v1.0
         </div>
 
         <div className="hero-text fade-in" style={{ animationDelay: '0.2s' }}>
           <div className={`glitch ${glitching ? 'active' : ''}`} data-text="CRIME">CRIME</div>
           <div>SCENE</div>
-          <div className="red">RECON</div>
+          <div className="red">RECON-</div>
           <div>STRUCTION</div>
         </div>
 
@@ -511,7 +511,7 @@ export default function Login() {
       </div>
 
       <div className="bottom-strip">
-        <div className="strip-text">ForensicVR Platform — CUHackIt 2026</div>
+        <div className="strip-text">CrimeLens Platform — CUHackIt 2026</div>
         <div className="strip-dot" />
         <div className="strip-text">Powered by Gemini AI + Auth0</div>
       </div>

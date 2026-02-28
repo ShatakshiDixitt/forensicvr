@@ -24,7 +24,7 @@ function AboutPage() {
     {
       num: '02',
       title: 'Gemini AI Analysis',
-      desc: 'Google\'s Gemini 2.5 Flash analyzes the image and extracts forensic properties: shape, material, dimensions, color, texture, and relevance.',
+      desc: "Google's Gemini 2.5 Flash analyzes the image and extracts forensic properties: shape, material, dimensions, color, texture, and relevance.",
       detail: 'Returns structured 3D data including real-world dimension estimates in meters, texture classification, and weight estimation.',
       color: '#e07b39'
     },
@@ -38,16 +38,10 @@ function AboutPage() {
     {
       num: '04',
       title: 'Deploy to VR',
-      desc: 'Hit "Send to VR" to transmit the object over WebSocket to your teammate\'s Unity scene, where it spawns with correct scale and color.',
+      desc: 'Hit "Send to VR" to transmit the object over WebSocket to the Unity scene, where it spawns with correct scale and color.',
       detail: 'Uses a local WebSocket server on port 9090. The Unity receiver script handles spawning, material assignment, and Rigidbody physics.',
       color: '#2ecc71'
     },
-  ]
-
-  const team = [
-    { role: 'Object Library + Scanner + VR Bridge', name: 'Your Part', tag: 'React + Electron + Gemini' },
-    { role: 'Gaussian Splat Environment', name: 'Teammate 1', tag: 'Unity + VR' },
-    { role: 'VR Interaction System', name: 'Teammate 2', tag: 'Unity XR Toolkit' },
   ]
 
   const stack = [
@@ -62,12 +56,10 @@ function AboutPage() {
   ]
 
   return (
-    <div>
+    <div style={{ width: '100%' }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;700;800&family=DM+Mono:wght@300;400;500&display=swap');
-        .about-hero {
-          margin-bottom: 64px;
-        }
+        .about-hero { margin-bottom: 64px; }
         .about-eyebrow {
           font-family: 'DM Mono', monospace;
           font-size: 10px;
@@ -88,9 +80,9 @@ function AboutPage() {
         .about-sub {
           font-family: 'DM Mono', monospace;
           font-size: 12px;
-          color: #333;
+          color: #888888;
           line-height: 1.7;
-          max-width: 500px;
+          max-width: 600px;
           letter-spacing: 0.5px;
         }
         .section-label {
@@ -113,7 +105,7 @@ function AboutPage() {
         }
         .steps-grid {
           display: grid;
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: repeat(4, 1fr);
           gap: 16px;
           margin-bottom: 64px;
         }
@@ -152,7 +144,7 @@ function AboutPage() {
         }
         .step-title {
           font-family: 'Syne', sans-serif;
-          font-size: 16px;
+          font-size: 15px;
           font-weight: 800;
           color: #fff;
           margin-bottom: 8px;
@@ -160,7 +152,7 @@ function AboutPage() {
         .step-desc {
           font-family: 'DM Mono', monospace;
           font-size: 11px;
-          color: #333;
+          color: #888888;
           line-height: 1.7;
           margin-bottom: 12px;
         }
@@ -176,55 +168,16 @@ function AboutPage() {
           max-height: 0;
           overflow: hidden;
           opacity: 0;
-          transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+          transition: max-height 0.3s ease, opacity 0.3s ease;
         }
         .step-card.active .step-detail {
-          max-height: 100px;
+          max-height: 120px;
           opacity: 1;
           margin-top: 4px;
         }
-        .team-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 12px;
-          margin-bottom: 64px;
-        }
-        .team-card {
-          background: #0c0c18;
-          border: 1px solid #13131f;
-          border-radius: 10px;
-          padding: 20px;
-          transition: border-color 0.2s ease;
-        }
-        .team-card:hover { border-color: #e6394633; }
-        .team-role {
-          font-family: 'DM Mono', monospace;
-          font-size: 9px;
-          color: #333;
-          letter-spacing: 2px;
-          text-transform: uppercase;
-          margin-bottom: 8px;
-        }
-        .team-name {
-          font-family: 'Syne', sans-serif;
-          font-size: 15px;
-          font-weight: 800;
-          color: #fff;
-          margin-bottom: 8px;
-        }
-        .team-tag {
-          font-family: 'DM Mono', monospace;
-          font-size: 10px;
-          color: #e63946;
-          background: #e6394611;
-          border: 1px solid #e6394622;
-          padding: 3px 10px;
-          border-radius: 20px;
-          display: inline-block;
-        }
         .stack-grid {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: repeat(8, 1fr);
           gap: 10px;
         }
         .stack-item {
@@ -240,7 +193,7 @@ function AboutPage() {
         }
         .stack-name {
           font-family: 'Syne', sans-serif;
-          font-size: 13px;
+          font-size: 12px;
           font-weight: 700;
           color: #fff;
           margin-bottom: 4px;
@@ -248,12 +201,12 @@ function AboutPage() {
         .stack-desc {
           font-family: 'DM Mono', monospace;
           font-size: 10px;
-          color: #2a2a3a;
+          color: #888888;
         }
       `}</style>
 
       <div className="about-hero">
-        <div className="about-eyebrow">ForensicVR / Documentation</div>
+        <div className="about-eyebrow">CrimeLens / Documentation</div>
         <div className="about-title">HOW IT<br /><span>WORKS</span></div>
         <div className="about-sub">
           A full-stack forensic evidence platform. Scan real objects, AI-generate 3D properties,
@@ -261,7 +214,6 @@ function AboutPage() {
         </div>
       </div>
 
-      {/* Steps */}
       <div className="section-label">Workflow</div>
       <div className="steps-grid">
         {steps.map(s => (
@@ -279,19 +231,6 @@ function AboutPage() {
         ))}
       </div>
 
-      {/* Team */}
-      <div className="section-label">Team</div>
-      <div className="team-grid">
-        {team.map(t => (
-          <div key={t.name} className="team-card">
-            <div className="team-role">{t.role}</div>
-            <div className="team-name">{t.name}</div>
-            <div className="team-tag">{t.tag}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* Stack */}
       <div className="section-label">Tech Stack</div>
       <div className="stack-grid">
         {stack.map(([n, d]) => (
@@ -324,12 +263,15 @@ export default function Dashboard() {
         .dash-layout {
           display: flex;
           height: 100vh;
+          width: 100vw;
           background: #06060f;
           font-family: 'Syne', sans-serif;
+          overflow: hidden;
         }
 
         .sidebar {
           width: 220px;
+          min-width: 220px;
           background: #08080f;
           border-right: 1px solid #0f0f1e;
           display: flex;
@@ -380,7 +322,7 @@ export default function Dashboard() {
         .nav-section-label {
           font-family: 'DM Mono', monospace;
           font-size: 8px;
-          color: #1a1a2a;
+          color: #888888;
           letter-spacing: 3px;
           text-transform: uppercase;
           padding: 0 8px;
@@ -416,115 +358,41 @@ export default function Dashboard() {
         }
         .nav-item.inactive { color: #222; }
         .nav-item.inactive:hover { background: #0f0f1e; color: #444; }
-        .nav-icon {
-          font-size: 13px;
-          width: 16px;
-          text-align: center;
-          flex-shrink: 0;
-        }
+        .nav-icon { font-size: 13px; width: 16px; text-align: center; flex-shrink: 0; }
         .nav-item.active .nav-icon { color: #e63946; }
         .nav-text-wrap { flex: 1; }
-        .nav-label {
-          font-family: 'Syne', sans-serif;
-          font-size: 12px;
-          font-weight: 700;
-          display: block;
-        }
-        .nav-desc {
-          font-family: 'DM Mono', monospace;
-          font-size: 9px;
-          color: #1a1a2a;
-          display: block;
-          margin-top: 1px;
-          letter-spacing: 0.5px;
-        }
-        .nav-item.active .nav-desc { color: #333; }
+        .nav-label { font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 700; display: block; }
+        .nav-desc { font-family: 'DM Mono', monospace; font-size: 9px; color: #888888; display: block; margin-top: 1px; letter-spacing: 0.5px; }
+        .nav-item.active .nav-desc { color: #888888; }
 
-        .sidebar-footer {
-          padding: 16px 12px;
-          border-top: 1px solid #0f0f1e;
-        }
-        .user-chip {
-          background: #0f0f1e;
-          border-radius: 8px;
-          padding: 10px 12px;
-          margin-bottom: 8px;
-        }
-        .user-label {
-          font-family: 'DM Mono', monospace;
-          font-size: 8px;
-          color: #1a1a2a;
-          letter-spacing: 2px;
-          text-transform: uppercase;
-          margin-bottom: 3px;
-        }
-        .user-email {
-          font-family: 'DM Mono', monospace;
-          font-size: 10px;
-          color: #333;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-        }
+        .sidebar-footer { padding: 16px 12px; border-top: 1px solid #0f0f1e; }
+        .user-chip { background: #0f0f1e; border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; }
+        .user-label { font-family: 'DM Mono', monospace; font-size: 8px; color: #888888; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 3px; }
+        .user-email { font-family: 'DM Mono', monospace; font-size: 10px; color: #888888; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
         .logout-btn {
-          width: 100%;
-          padding: 9px;
-          background: transparent;
-          border: 1px solid #13131f;
-          border-radius: 6px;
-          color: #1a1a2a;
-          font-family: 'DM Mono', monospace;
-          font-size: 9px;
-          letter-spacing: 2px;
-          cursor: pointer;
-          transition: all 0.15s ease;
-          text-transform: uppercase;
+          width: 100%; padding: 9px; background: transparent;
+          border: 1px solid #13131f; border-radius: 6px; color: #888888;
+          font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px;
+          cursor: pointer; transition: all 0.15s ease; text-transform: uppercase;
         }
         .logout-btn:hover { border-color: #e63946; color: #e63946; }
 
-        .main-area {
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          overflow: hidden;
-        }
+        .main-area { flex: 1; display: flex; flex-direction: column; overflow: hidden; min-width: 0; }
 
         .topbar {
-          height: 52px;
-          border-bottom: 1px solid #0f0f1e;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 0 40px;
-          flex-shrink: 0;
-          background: #06060f;
+          height: 52px; border-bottom: 1px solid #0f0f1e;
+          display: flex; align-items: center; justify-content: space-between;
+          padding: 0 40px; flex-shrink: 0; background: #06060f;
         }
-        .topbar-left {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-        }
+        .topbar-left { display: flex; align-items: center; gap: 8px; }
         .topbar-dot { width: 5px; height: 5px; background: #e63946; border-radius: 50%; animation: blink 1.5s ease-in-out infinite; }
-        .topbar-status {
-          font-family: 'DM Mono', monospace;
-          font-size: 9px;
-          color: #1a1a2a;
-          letter-spacing: 2px;
-          text-transform: uppercase;
-        }
-        .topbar-clock {
-          font-family: 'DM Mono', monospace;
-          font-size: 11px;
-          color: #1a1a2a;
-          letter-spacing: 2px;
-        }
+        .topbar-status { font-family: 'DM Mono', monospace; font-size: 9px; color: #1a1a2a; letter-spacing: 2px; text-transform: uppercase; }
+        .topbar-clock { font-family: 'DM Mono', monospace; font-size: 11px; color: #888888; letter-spacing: 2px; }
 
         .content-scroll {
-          flex: 1;
-          overflow-y: auto;
-          padding: 40px;
-          scrollbar-width: thin;
-          scrollbar-color: #1a1a2a transparent;
+          flex: 1; overflow-y: auto; padding: 40px;
+          scrollbar-width: thin; scrollbar-color: #1a1a2a transparent;
+          width: 100%;
         }
         .content-scroll::-webkit-scrollbar { width: 4px; }
         .content-scroll::-webkit-scrollbar-track { background: transparent; }
@@ -535,9 +403,8 @@ export default function Dashboard() {
         <div className="sidebar">
           <div className="logo-wrap">
             <div className="logo-badge">System Online</div>
-            <div className="logo-name">ForensicVR</div>
+            <div className="logo-name">CrimeLens</div>
           </div>
-
           <div className="nav-wrap">
             <div className="nav-section-label">Navigation</div>
             {NAV_ITEMS.map(item => (
@@ -554,7 +421,6 @@ export default function Dashboard() {
               </button>
             ))}
           </div>
-
           <div className="sidebar-footer">
             <div className="user-chip">
               <div className="user-label">Investigator</div>
@@ -578,7 +444,6 @@ export default function Dashboard() {
               {time.toLocaleTimeString('en-US', { hour12: false })}
             </div>
           </div>
-
           <div className="content-scroll">
             {activeTab === 'library' && <ObjectLibrary />}
             {activeTab === 'scanner' && <Scanner />}
